@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//Route::get('index/index','IndexController@index');
+Route::get('about','AboutController@index');
+Route::group(['prefix'=>'index'],function(){
+	Route::get('index','IndexController@index');
+	Route::get('create','IndexController@create');
+	Route::get('store','IndexController@store');
+	Route::get('show','IndexController@show');
+	Route::get('edit','IndexController@edit');
+	Route::get('update','IndexController@update');
+	Route::get('destroy','IndexController@destroy');
+	
+});
